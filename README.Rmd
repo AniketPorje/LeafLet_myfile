@@ -1,0 +1,45 @@
+---
+title: "My favorite restaurants"
+author: "Aniket Porje"
+date: "February 5, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## My first leaflet plot
+
+This are my favorite restaurants in Pune and Nashik city from India.
+
+Whenever you will meet visit India do try.
+
+
+## Refer link for more
+
+Explore:
+
+
+
+```{r, eval=TRUE,echo=FALSE}
+library(leaflet)
+library(knitr)
+
+md_restaurants1 <- data.frame(name = c("Cafe Good luck", "Vaishali","Sadhana","Yaara Di Haaveli"),
+                             latitude = c(18.5173,18.52055556,20.0215679,18.56085 ),
+                             longitude = c(73.8416,73.85666667,73.7190766,73.7661433 ))
+
+Visit1 <- c(
+  "<a href='https://www.zomato.com/pune/cafe-goodluck-deccan-gymkhana/order?ref=google_place_action'>Cafe Good luck</a>",
+  "<a href='http://www.vaishalihotel.in/'>Vaishali</a>",
+  "<a href='https://www.zomato.com/nashik/sadhana-restaurant-satpur'>Sadhana</a>",
+  "<a href='https://www.zomato.com/pune/yaara-di-haaveli-1-baner'>Yaara Di Haaveli</a>"
+)
+
+
+  addMarkers(addTiles(leaflet(md_restaurants1)),popup = Visit1)
+
+```
+
+
